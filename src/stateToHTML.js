@@ -352,6 +352,9 @@ class MarkupGenerator {
         let attrs = DATA_TO_ATTR.hasOwnProperty(entityType) ? DATA_TO_ATTR[entityType](entityType, entity) : null;
         let attrString = stringifyAttrs(attrs);
         return `<img${attrString}/>`;
+      } else if (entityType != null && entityType === 'MENTION') {
+        const data = entity.getData();
+        return data.mention.value;
       } else {
         return content;
       }
