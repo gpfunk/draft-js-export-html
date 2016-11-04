@@ -128,7 +128,7 @@ function getTags(blockType: string): Array<string> {
     case BLOCK_TYPE.ATOMIC:
       return ['figure'];
     default:
-      return ['p'];
+      return ['div'];
   }
 }
 
