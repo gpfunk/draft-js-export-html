@@ -354,7 +354,7 @@ class MarkupGenerator {
         return `<img${attrString}/>`;
       } else if (entityType != null && entityType === 'MENTION') {
         const data = entity.getData();
-        return data.mention.value;
+        return data.mention.get ? data.mention.get('value') : data.mention.value;
       } else {
         return content;
       }
